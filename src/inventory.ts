@@ -12,9 +12,11 @@ let inventory: InventoryItem[] = [
 ];
 
 export const calcInventoryValue = (array: InventoryItem[]): number => {
+  let value = 0;
   array.forEach((item) => {
-    return item.product.price * item.quantity;
+    value += item.product.price * item.quantity;
   });
+  return value;
 };
 
 console.log(calcInventoryValue(inventory));
